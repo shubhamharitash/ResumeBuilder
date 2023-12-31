@@ -48,4 +48,9 @@ public class ResumeController {
         resumeService.generateResume(userId,response);
        return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/add/resume")
+    public  ResponseEntity<Resume> addResume(@RequestBody Resume resume){
+       return ResponseEntity.ok().body(resumeService.saveResume(resume));
+    }
 }
